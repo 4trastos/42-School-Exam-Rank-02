@@ -1,50 +1,45 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   repeat_alpha.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: davgalle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/02/24 23:22:00 by davgalle          #+#    #+#             */
+/*   Updated: 2024/02/24 23:22:20 by davgalle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
 
-void	bo(char c)
+void    ft_putchar_n(char c, int i)
 {
-	write(1, &c, 1);
+    while (i > 0)
+    {
+        write(1, &c, 1);
+        --i;
+    }
 }
 
-void	pu_char_a(char c, int i)
+void    repeat_alpha(char *str)
 {
-	i--;
-	while (i > 0)
-	{
-		bo(c);
-		i--;
-	}
+    while (*str != '\0')
+    {
+        if (*str >= 'a' && *str <= 'z')
+            ft_putchar_n(*str, *str + 1 - 'a');
+        else if (*str >= 'A' && *str <= 'Z')
+            ft_putchar_n(*str, *str + 1 - 'A');
+        else
+            write(1, str, 1);
+        ++str;
+    }
 }
 
-int	ok(char c)
+int main(int ac, char **av)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
-}
+    if (ac == 2)
+        repeat_alpha(av[1]);
 
-void	repeat_alpha(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (ok(str[i]))
-		{
-			if (str[i] >= 'a' && str[i] <= 'z')
-				pu_char_a(str[i], (str[i] + 1) - 'a');
-			else if (str[i] >= 'A' && str[i] <= 'Z')
-				pu_char_a(str[i], (str[i] + 1) - 'A');
-		}
-		bo(str[i]);
-		i++;
-	}
-}
-
-int	main(int argc, char **argv)
-{
-	if (argc == 2)
-		repeat_alpha(argv[1]);
-	bo('\n');
-	return (0);
+    write(1, "\n", 1);
+    return (0);
 }
