@@ -6,63 +6,45 @@
 /*   By: davgalle <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/24 15:29:45 by davgalle          #+#    #+#             */
-/*   Updated: 2024/02/24 16:53:00 by davgalle         ###   ########.fr       */
+/*   Updated: 2024/02/24 17:08:21 by davgalle         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <unistd.h>
-#include <stdlib.h>
 
-void	ft_putchar(char c)
+void	rot13(char *str)
 {
-	write(1, &c, 1);
-}
-
-char	ft_root13(char c)
-{
-	char	*normal;
-	char	*root13;
-	int		i;
+	int	i;
+	char	rot;
 
 	i = 0;
-	normal = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	root13 = "nopqrstuvwxyzabcdefghijklmNOPQRSTUVWXYZABCDEFGHIJKLM";
-	while(normal[i] != '\0')
+	while(str[i])
 	{
-		if (normal[i] == c)
-			return(root13[i]);
-		else
-			i++;
+		rot = str[i];
+		if (rot >= 97 && rot <= 122)
+		{
+			rot = str[i] - 97;
+			rot = ((rot + 13) % 26) + 97;
+		}
+		else if (rot >= 65 && rot <= 90)
+		{
+			rot = str[i] - 65;
+			rot = ((rot + 13) % 26) + 65;
+		}
+		write(1, &rot, 1);
+		i++;
 	}
-	return (0);
 }
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	char	char13;
-	int		i;
-
 	if (argc == 2 && argv[1][0] == 0)
 	{
 		write(1, "\n", 1);
 		return (0);
 	}
-	if (argc == 2)
-	{
-		i = 0;
-		while(argv[1][i] != '\0')
-		{
-			if (argv[1][i] != ' ')
-			{
-				char13 = ft_root13(argv[1][i]);
-				ft_putchar(char13);
-			}
-			else
-				ft_putchar(argv[1][i]);
-			i++;
-		}
-	}
+	else if (argc == 2)
+		rot13(argv[1]);
 	else
 		write(1, "\n", 1);
 	return (0);
