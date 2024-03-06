@@ -1,43 +1,49 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rev_wstr.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: davgalle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/06 15:17:10 by davgalle          #+#    #+#             */
+/*   Updated: 2024/03/06 16:11:34 by davgalle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
 
-void	ft_putchar(char c)
+int main(int argc, char **argv)
 {
-	write(1, &c, 1);
-}
-
-int		ft_strlen(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i++]);
-	return (i - 1);
-}
-
-void	rev_wstr(char *str, int first)
-{
-	int	start;
-	int	i;
-
-	i = 0;
-	while (str[i] && str[i] == ' ')
-		++i;
-	if (!str[i]) return;
-	start = i;
-	while (str[i] && str[i] != ' ')
-		i++;
-	rev_wstr(str + i, 0);
-	write(1, str + start, i - start);
-	if (!first)
-		write(1, " ", 1);
-}
-
-int		main(int argc, const char *argv[])
-{
-	if (argc == 2)
-		rev_wstr((char*)argv[1], 1);
-	ft_putchar('\n');
-	return 0;
+	int start;
+	int end;
+	int i = 0;
+		
+	if(argc == 2)
+	{   
+		while(argv[1][i] != '\0')
+			i++;
+		while(i >= 0)
+		{
+			while( argv[1][i] == '\0' || argv[1][i] == ' ' || argv[1][i] == '\t')
+				i--;
+			end = i;
+			while(argv[1][i] && argv[1][i] != ' ' && argv[1][i] != '\t')
+				i--;
+			start = i + 1;
+			int  flag;
+			flag = start;
+			while(start <= end)
+			{
+				write (1, &argv[1][start],1);
+				start++;		
+			}
+			if (flag !=0)
+			{
+				write(1, " ", 1);
+			}
+		}
+	}
+	write(1, "\n", 1);
 }
