@@ -1,29 +1,62 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   last_word.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: davgalle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/06 16:19:44 by davgalle          #+#    #+#             */
+/*   Updated: 2024/03/06 17:38:23 by davgalle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
+#include <unistd.h>
 #include <stdlib.h>
 
-void	last_word(char *str)
+int	ft_strlen(char *str)
 {
-	int	j = 0;
-	int	i = 0;
-
+	int i = 0;
 	while (str[i])
-	{
-		if (str[i] == ' ' && str[i + 1] >= 33 && str[i + 1] <= 126)
-			j = i + 1;
 		i++;
-	}
-	while (str[j] >= 33 && str[j] <= 127)
-	{
-		write(1, &str[j], 1);
-		j++;
-	}
+	return (i);
 }
 
 int	main(int argc, char **argv)
 {
+	int	i;
+	int	len;
+	int	start;
+	int	z;
+	char *str;
+
 	if (argc == 2)
-		last_word(argv[1]);
+	{
+		str = argv[1];
+		len = ft_strlen(str);
+		while (str[i])
+		{
+			if (str[i] == ' ')
+				z++;
+			i++;
+		}
+		if (z == len)
+		{
+			write(1, "\n", 1);
+			return (0);
+		}
+		while (str[len] == ' ' || str[len] == '\0')
+			len--;
+		i = len;
+		while (str[i] != ' ')
+			i--;
+		start = i + 1;
+		while (str[start] != ' ' && str[start] != '\0')
+		{
+			write(1, &str[start], 1);
+			start++;
+		}
+	}
 	write(1, "\n", 1);
 	return (0);
 }
