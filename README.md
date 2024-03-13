@@ -13,7 +13,7 @@ No hay Norminette en este examen.
 
 <br>
 
-# Preguntas de Exmaen
+# Preguntas de Examen
 
 ### Pregunta 1 es de nivel 1
 :question: Cualquiera de las 12 funciones/programas siguientes:
