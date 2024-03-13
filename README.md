@@ -1,19 +1,21 @@
-# Exam Details
+Work made by: https://github.com/pasqualerossi
+
+# Detalles del examen
 
 - Este examen tiene 4 preguntas en total. Se elige una pregunta aleatoria de cada nivel siguiente. 
 - Si no aprueba el examen, la próxima vez que lo repita, lo reiniciará en el Nivel 1 con un conjunto diferente de preguntas.
 
 <br>
 
-# Exam Norminette
+# Norminette
 
 No hay Norminette en este examen. 
 
 <br>
 
-# Exam Questions
+# Preguntas de Exmaen
 
-### Question 1 is from Level 1
+### Pregunta 1 es de nivel 1
 :question: Cualquiera de las 12 funciones/programas siguientes:
 ```
   - first_word
@@ -29,7 +31,7 @@ No hay Norminette en este examen.
   - search_and_replace
   - ulstr
 ```
-### Question 2 is from Level 2
+### Pregunta 2 es de nivel 2
 :question: Cualquiera de las 20 funciones/programas siguientes:
 ```
   - alpha_mirror
@@ -53,7 +55,7 @@ No hay Norminette en este examen.
   - union
   - wdmatch 
 ```
-### Question 3 is from Level 3
+### Pregunta 3 es de nivel 3
 :question: Cualquiera de las 15 funciones/programas siguientes:
 ```
   - add_prime_sum
@@ -72,7 +74,7 @@ No hay Norminette en este examen.
   - str_capitalizer
   - tab_mult 
 ```
-### Question 4 is from Level 4
+### Pregunta 4 es de nivel 4
 :question: Cualquiera de las 10 funciones/programas siguientes:
 ```
   - flood_fill
