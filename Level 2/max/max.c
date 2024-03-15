@@ -13,14 +13,11 @@
 
 int		max(int* tab, unsigned int len)
 {
-	int	i;
-	int	numb;
+	int i = 0;
+	int numb;
 
-	if (!tab)
-		return (0);
-	i = 0;
 	numb = tab[i];
-	while (i < len)
+	while (i <= len)
 	{
 		if (numb < tab[i])
 			numb = tab[i];
