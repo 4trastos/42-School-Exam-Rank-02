@@ -14,78 +14,46 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-void ft_putchar(char *str)
+int check(int c, char *str, int index)
 {
 	int i = 0;
-	while (str[i])
+	
+	while(i < index)
 	{
-		write(1, &str[i], 1);
+		if (str[i] == c)
+			return 0;
 		i++;
 	}
+	return  1;
 }
 
-int	ft_strlen(char *str)
-{
+int main(int argc, char **argv)
+{	
 	int i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
-}
-
-int	ft_charcmp(char c, char *aux, int z)
-{
-	int i = 0;
-	int count = 0;
-	while (aux[i] && z > 0)
-	{
-		if (aux[i] == c)
-			return (1);
-		i++;
-		z--;
-	}
-	return (count);
-}
-
-int	main(int argc, char **argv)
-{
-	int	i;
-	int z;
-	int flag;
-	char *str;
-	char *dst;
-	char *aux;
-
+	int j = 0;
+	int k = 0;
+	char *str = argv[1];
+	char *s2 = argv[2];
+	
 	if (argc == 3)
 	{
-		i = 0;
-		z = 0;
-		flag = 0;
-		str = argv[1];
-		dst = argv[2];
-		aux = malloc (ft_strlen(str) + ft_strlen(dst) + 1);
-		while (str[i] != '\0')
+		while(argv[1][i] != '\0')
 		{
-            if (ft_charcmp(str[i], aux, z) ==  0)
-			{
-			   	aux[z] = str[i];
-				z++;
-			}
-            i++;
+			i++;
 		}
-		i = 0;
-		while (dst[i] != '\0')
+		while(argv[2][j] != '\0')
 		{
-			if (ft_charcmp(dst[i], aux, z) ==  0)
-			{
-			   	aux[z] = dst[i];
-				z++;
-			}
-            i++;
-
+			argv[1][i] = argv[2][j];
+			i++;
+			j++;
 		}
-		aux[z] = '\0';
-		ft_putchar(aux);
+		i--;
+		while(k <= i)
+		{
+			if(check(argv[1][k], argv[1], k) == 1) 
+				write (1, &argv[1][k], 1); 
+			k++;
+		}
 	}
-	write(1, "\n", 1);
-	return (0);
+	write (1, "\n", 1);
 }
