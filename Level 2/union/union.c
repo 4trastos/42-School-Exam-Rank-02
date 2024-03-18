@@ -37,21 +37,19 @@ int main(int argc, char **argv)
 	
 	if (argc == 3)
 	{
-		while(argv[1][i] != '\0')
-		{
+		while(str[i] != '\0')
 			i++;
-		}
-		while(argv[2][j] != '\0')
+		while(s2[j] != '\0')
 		{
-			argv[1][i] = argv[2][j];
+			str[i] = s2[j];
 			i++;
 			j++;
 		}
 		i--;
 		while(k <= i)
 		{
-			if(check(argv[1][k], argv[1], k) == 1) 
-				write (1, &argv[1][k], 1); 
+			if(check(str[k], str, k) == 1) 
+				write (1, &str[k], 1); 
 			k++;
 		}
 	}
