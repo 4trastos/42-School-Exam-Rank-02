@@ -1,53 +1,82 @@
 #include <unistd.h>
 
-int	ft_atoi(char *s)
-{
-	int	res = 0;
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
 
-	while (*s)
-		res = res * 10 + *s++ - 48;
-	return (res);
+int ft_atoi(char *str)
+{
+	int i;
+	int number;
+	int sign;
+
+	i = 0;
+	sign = 1;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			sign = -1;
+		i++;
+	}
+	while (str[i] != '\0')
+	{
+		number = number * 10 + (str[i] - '0');
+		i++;
+	}
+	return (number * sign);
 }
 
-int	is_prime(int num)
+int	is_prime(int numb)
 {
-	int	i = 2;
+	int i = 2;
 
-	if (num <= 1)
+	if (numb <= 1)
 		return (0);
-	while (i * i <= num)
+	while (i * i <= numb)
 	{
-		if (num % i == 0)
+		if (numb % i == 0)
 			return (0);
 		i++;
 	}
 	return (1);
 }
 
-void	put_nbr(int n)
+void	printint(int sum)
 {
-	if (n >= 10)
-		put_nbr(n / 10);
-	char digit = n % 10 + '0';
-	write(1, &digit, 1);
+	char *str = "0123456789";
+
+	if (sum > 9)
+		printint(sum / 10);
+	write(1, &str[sum % 10], 1);
 }
 
-int main(int ac, char **av)
+int main(int argc, char **argv)
 {
-
-	if (ac == 2)
+	int numb;
+	int sum;
+	if (argc < 2)
 	{
-		int	nbr = ft_atoi(av[1]);
-		int	sum = 0;
-
-		while (nbr > 0)
-		{
-			if (is_prime(nbr))
-				sum += nbr;
-			nbr--;
-		}
-		put_nbr(sum);
+		write(1, "0", 1);
+		write(1, "\n", 1);
 	}
-	write(1, "\n", 1);
+	else
+	{
+		sum = 0;
+		numb = ft_atoi(argv[1]);
+		if (numb < 0)
+		{
+			write(1, "0", 1);
+			write(1, "\n", 1);
+			return (0);
+		}
+		while (numb > 0)
+		{
+			if (is_prime(numb))
+				sum = sum + numb;
+			numb--;
+		}
+		printint(sum);
+
+	}
 	return (0);
 }
