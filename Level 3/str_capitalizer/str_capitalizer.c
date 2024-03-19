@@ -2,38 +2,29 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void	str_capitalizer(char *str)
-{
-	int i = 0;
-
-	if (str[i] >= 'a' && 'z' >= str[i])
-		str[i] -= 32;
-	write(1, &str[i], 1);
-	while (str[++i])
-	{
-		if (str[i] >= 'A' && 'Z' >= str[i])
-			str[i] += 32;
-		if ((str[i] >= 'a' && 'z' >= str[i]) && (str[i - 1] == ' ' || \
-		str[i - 1] == '\t'))
-			str[i] -= 32;
-		write(1, &str[i], 1);
-	}
-}
-
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	int i;
-
-	if (argc < 2)
+	int j;
+	if (argc == 1)
 		write(1, "\n", 1);
 	else
 	{
 		i = 1;
-		while (i < argc)
+		while (argv[i])
 		{
-			str_capitalizer(argv[i]);
+			j = 0;
+			while (argv[i][j] != '\0' && argv[i][j] != '\n')
+			{
+				if ((argv[i][j] >= 'a' && argv[i][j] <= 'z') && (argv[i][j + 1] == ' ' || argv[i][j + 1] == '\0'))
+					argv[i][j] = argv[i][j] - 32;
+				else if (argv[i][j] >= 'A' && argv[i][j] <= 'Z' && argv[i][j + 1] != ' ')
+					argv[i][j] = argv[i][j] + 32;
+				write(1, &argv[i][j], 1);
+				j++;
+			}
 			write(1, "\n", 1);
-			i += 1;
+			i++;
 		}
 	}
 	return (0);
