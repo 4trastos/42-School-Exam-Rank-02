@@ -14,33 +14,31 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
-	int	i;
-	int c;
-
+	int i;
+	int flag;
+	char *str;
 	if (argc == 2)
 	{
 		i = 0;
-		c = 1;
-		while (argv[1][i] == ' ')
+		str = argv[1];
+		flag = 0;
+		while (str[i] == ' ' || str[i] == '\t')
 			i++;
-		while (argv[1][i] != '\0')
+		while (str[i] != '\0')
 		{
-			if (argv[1][i] == ' ' && c == 0 && argv[1][i + 1] != '\0')
+			if ((str[i] == ' ' || str[i] == '\t') && flag == 0)
+				flag = 1;
+			if (!(str[i] == ' ' || str[i] == '\t'))
 			{
-				write(1, &argv[1][i], 1);
-				c = 1;
-				i++;
-			}
-			if (argv[1][i] != ' ')
-			{
-				write(1, &argv[1][i], 1);
-				c = 0;
+				if (flag)
+					write(1, " ", 1);
+				flag = 0;
+				write(1, &str[i], 1);
 			}
 			i++;
 		}
-
 	}
 	write(1, "\n", 1);
 	return (0);
