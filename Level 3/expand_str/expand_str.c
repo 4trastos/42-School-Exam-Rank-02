@@ -7,7 +7,6 @@ int main(int argc, char **argv)
 	int i;
 	int flag;
 	char *str;
-
 	if (argc == 2)
 	{
 		i = 0;
@@ -17,7 +16,7 @@ int main(int argc, char **argv)
 			i++;
 		while (str[i] != '\0')
 		{
-			if ((str[i] == ' ' || str[i] == '\t') && flag == 0 && str[i + 1] != '\0')
+			if ((str[i] == ' ' || str[i] == '\t') && flag == 0)
 				flag = 1;
 			if (!(str[i] == ' ' || str[i] == '\t'))
 			{
