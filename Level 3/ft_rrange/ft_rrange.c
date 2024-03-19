@@ -10,16 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+
 int     *ft_rrange(int start, int end)
 {
-	int i = 0;
-	int *array;
-	array = (int *)malloc(sizeof(int) * (end - start));
-	while (end >= start)
+	int	*result;
+	int	i;
+	int	len;
+
+	len = (end - start) + 1;
+	i = 0;
+	result = (int *)malloc(sizeof(int) * (len));
+	if (!result)
+		return (NULL);
+	while (i < len)
 	{
-		array[i] = end;
-		end--;
+		result[i] = end - i;
 		i++;
 	}
-	return (array);
+	return (result);
 }
