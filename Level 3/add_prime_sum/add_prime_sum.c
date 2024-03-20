@@ -4,6 +4,8 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+#include <unistd.h>
+
 int ft_atoi(char *str)
 {
 	int i;
@@ -54,7 +56,7 @@ int main(int argc, char **argv)
 {
 	int numb;
 	int sum;
-	if (argc < 2)
+	if (argc != 2)
 	{
 		write(1, "0", 1);
 		write(1, "\n", 1);
@@ -62,7 +64,7 @@ int main(int argc, char **argv)
 	else
 	{
 		sum = 0;
-		numb = ft_atoi(argv[1]);
+			numb = ft_atoi(argv[1]);
 		if (numb < 0)
 		{
 			write(1, "0", 1);
@@ -76,7 +78,7 @@ int main(int argc, char **argv)
 			numb--;
 		}
 		printint(sum);
-
+		write(1, "\n", 1);
 	}
 	return (0);
 }
