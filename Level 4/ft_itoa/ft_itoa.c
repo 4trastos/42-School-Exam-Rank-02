@@ -14,37 +14,41 @@
 #include <unistd.h>
 #include <stdlib.h>
 
-char *ft_itoa(int nbr) 
+char	*ft_itoa(int nbr)
 {
-	int n = nbr;
-	int len = 0;
-	if (nbr <= 0)
+	char	*str;
+	int i = 0;
+	int len = 0;;
+	int numb;
+
+	numb = nbr;
+	while (numb)
 	{
-		len++;
-    }
-	while (n) 
-	{
-		n /= 10;
+		numb = numb / 10;
 		len++;
 	}
-	char *result = (char *)malloc(sizeof(char) * (len + 1));
-	if (result == NULL) 
-		return NULL;
-	result[len] = '\0';
-	if (nbr == 0)
+	if (nbr < 0)
+		len++;
+	str = (char *)malloc(sizeof(char) * (len + 1));
+	if (!str)
+		return (NULL);
+	if (nbr < 0)
 	{
-		result[0] = '0';
-		return(result);
-	}
-	if (nbr < 0) 
-	{
-		result[0] = '-';
+		str[0] = '-';
 		nbr = -nbr;
 	}
-	while (nbr) 
+	if (nbr == 0)
 	{
-		result[--len] = nbr % 10 + '0';
-		nbr /= 10;
+		str[0] = '0';
+		return (str);
 	}
-	return result;
+	str[len] = '\0';
+	len--;
+	while (nbr > 0)
+	{
+		str[len] = (nbr % 10) + '0';
+		nbr = nbr / 10;
+		len--;
+	}
+	return (str);
 }
