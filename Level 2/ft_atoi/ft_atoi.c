@@ -1,23 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: davgalle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/22 11:05:52 by davgalle          #+#    #+#             */
+/*   Updated: 2024/03/22 13:58:04 by davgalle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
-#include <string.h>
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
-	int result = 0;
-	int sign = 1;
+	int i;
+	int sign;
+	int result;
 
-	while (*str == ' ' || (*str >= 9 && *str <= 13))
-        	str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str >= '0' && *str <= '9')
+	i = 0;
+	sign = 1;
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '-' || str[i] == '+')
 	{
-		result = result * 10 + *str - '0';
-		str++;
+		if (str[i] == '-')
+			sign = -1;
+		i++;
 	}
-	return (sign * result);
+	while (str[i] >= '0' && str[i] <= '9' )
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	return (result * sign);
 }
