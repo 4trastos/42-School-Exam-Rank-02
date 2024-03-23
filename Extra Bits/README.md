@@ -10,9 +10,13 @@ Bit operators:
 
 *** This is intended to be an aid in learning to operate with bits. ***
 
-*** Here you can operate and demonstrate the functions that are asked of you in Exam 02 about operating with bits. ***
+*** Here you can operate and demonstrate the functions that are asked of you in
+Exam 02 about operating with bits. ***
 
-Bit operators can only operate on char and int data types (decimal, hexadecimal, and octal integers). Bit operators perform operations on each of the bits of an integer or char.
+Bit operators can only operate on char and int data types (decimal, hexadecimal,
+and octal integers).
+Bit operators perform operations on each of the bits of an integer or char.
+
 These operators are:
 
 • AND, represented by the & symbol.
@@ -35,7 +39,8 @@ AND |   Bit 0   |   Bit 1   |   Result
           1     |     0     |     0
           1     |     1     |     1
 
-Thus, if we perform the operation 107 (01101011 in binary) AND 27 (00011011 in binary) we would obtain 11 (00001011 in binary).
+Thus, if we perform the operation 107 (01101011 in binary) AND 27 (00011011 in binary)
+we would obtain 11 (00001011 in binary).
 The OR operation (|) compares bit by bit, obtaining a result according to table OR.
 
 Bitwise OR operation:
@@ -47,7 +52,8 @@ OR  |   Bit 0   |   Bit 1   |   Result
           1     |     0     |     1
           1     |     1     |     1
 
-Thus, if we perform the operation 107 (01101011 in binary) OR 27 (00011011 in binary) we would obtain 123 (01111011 in binary).
+Thus, if we perform the operation 107 (01101011 in binary) OR 27 (00011011 in binary)
+we would obtain 123 (01111011 in binary).
 The XOR (^) operation compares bit by bit obtaining a result according to table XOR.
 
 Bitwise XOR operation:
@@ -60,10 +66,14 @@ XOR |   Bit 0   |   Bit 1   |   Result
           1     |     1     |     0
 
 
-Thus, if we perform the operation 107 (01101011 in binary) XOR 27 (00011011 in binary) we would obtain 112 (01110000 in binary).
+Thus, if we perform the operation 107 (01101011 in binary) XOR 27 (00011011 in binary)
+we would obtain 112 (01110000 in binary).
 The one's complement operator (~) simply inverts each of the bits.
 Thus, ~01101011 is equal to 10010100 and ~00011011 is equal to 11100100.
-The left shift operator («) shifts the bits to the left as many positions as indicated after the operator, placing the least significant bit (rightmost bit) with a zero, and the most significant bit (bit leftmost) is discarded.
+The left shift operator («) shifts the bits to the left as many positions as indicated
+after the operator, placing the least significant bit (rightmost bit) with a zero, and
+
+the most significant bit (bit leftmost) is discarded.
 
 Let's look at an example in which a shift to the right is applied to a variable.
 left of a bit:
