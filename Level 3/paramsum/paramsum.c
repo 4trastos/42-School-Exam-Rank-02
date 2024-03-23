@@ -1,18 +1,35 @@
-#include <unistd.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   paramsum.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: davgalle <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/23 13:03:24 by davgalle          #+#    #+#             */
+/*   Updated: 2024/03/23 20:27:07 by davgalle         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	ft_princhar(int numb)
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+void	printarg(int arg)
 {
-	char *number = "0123456789";
-	if (numb > 9)
-		ft_princhar(numb / 10);
-	write(1, &number[numb % 10], 1);
+	char *str = "0123456789";
+	if (arg > 9)
+		printarg(arg / 10);
+	write(1, &str[arg % 10], 1);
 }
 
 int main(int argc, char **argv)
 {
 	(void)argv;
 
-	ft_princhar(argc -1);
+	if (argc == 1)
+		write(1, "0", 1);
+	else
+		printarg(argc - 1);
 	write(1, "\n", 1);
 	return (0);
 }
