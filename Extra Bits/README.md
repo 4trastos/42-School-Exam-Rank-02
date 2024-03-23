@@ -104,3 +104,24 @@ decimal is 2. This value is then assigned to the left variable.
 The right shift operator (») shifts the bits to the right as many positions as indicated 
 after the operator, with the most significant bit being set to a zero, and the least significant
 bit being discarded. Let's now look at an example of shifting a bit to the right:
+
+int main (void)
+{
+    int right = 1;
+    right = right >> 1;
+}
+
+At initialization, the right variable has a value of 1, which in binary is 00000001. Let's
+look in the figure below to see how the movement is performed.
+
+                         ___ ___ ___ ___ ___ ___
+Before moving.          | 0 | 0 | 0 | 0 | 0 | 1 |                         
+                         ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯
+                            \   \   \   \   \   \         The most
+                         ___ ___ ___ ___ ___ ___          significant bit
+After displacement.     | 0 | 0 | 0 | 0 | 0 | 0 |  X <--- is discarded.          
+                         ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯         
+                          ^
+                   A zero is entered
+                      in the least
+                    significant bit
