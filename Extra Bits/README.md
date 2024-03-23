@@ -125,3 +125,6 @@ After displacement.     | 0 | 0 | 0 | 0 | 0 | 0 |  X <--- is discarded.
                    A zero is entered
                       in the least
                     significant bit
+
+As can be seen, the result of the shift is 00000000 in binary, whose equivalent value in
+decimal is 0. This value is then assigned to the right variable.
