@@ -98,3 +98,9 @@ is discarded   --->  X  | 0 | 0 | 0 | 0 | 1 | 0 |  After displacement.
                                       A zero is entered
                                          in the least
                                        significant bit
+
+As can be seen, the result of the shift is 00000010 in binary, whose equivalent value in
+decimal is 2. This value is then assigned to the left variable.
+The right shift operator (») shifts the bits to the right as many positions as indicated 
+after the operator, with the most significant bit being set to a zero, and the least significant
+bit being discarded. Let's now look at an example of shifting a bit to the right:
