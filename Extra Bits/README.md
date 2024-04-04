@@ -19,9 +19,9 @@ Bit operators perform operations on each of the bits of an integer or char.
 
 These operators are:
 
-• AND, represented by the & symbol.
-• OR, represented by the symbol I.
-• XOR, represented by the symbol A.
+• AND, represented by the (&) symbol.
+• OR, represented by the symbol (|).
+• XOR, represented by the symbol (^).
 • One's complement, represented by the symbol ~.
 • Shift to the left, is represented by two minor signs
 that (").
