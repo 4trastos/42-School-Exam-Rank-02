@@ -36,7 +36,7 @@
 	/* ************************************************** */
 	/*         Color de coche y número de puertas         */
 	/*                                                    */
-	/*	...::: Un coche Amarillo y tiene 3 puertas :::... */
+	/* ...::: Un coche  Amarillo y tiene 3 puertas :::... */
 	/* ************************************************** */
 
 /*
