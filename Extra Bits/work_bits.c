@@ -65,9 +65,12 @@ int main(void)
 	/* Desmostración de como desborda y se convierte en negativo */
 	
 	char c = 0;
-	while (c <= 127 && c != -1)
+	int f = 0;
+	while (c <= 127 && f != 2)
 	{
 		printf("%d\n", c);
+		if (c == -128)
+			f++;
 		c++;
 	}
 	return (0);
