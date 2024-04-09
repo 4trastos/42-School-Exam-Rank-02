@@ -114,6 +114,10 @@ int main(void)
 		c++;
 	}
 
+	/* ********************************************************* */
+	/*    ...:::  Operación coche amarillo y 3 puertas  :::...   */
+	/* ********************************************************* */
+	
 	printf("Amarillo y tres puertas es: %d\n", YELLOW | TRES);
 	printf("Tres: %d\n", TRES);
 	return (0);
