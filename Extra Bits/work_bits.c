@@ -90,7 +90,7 @@ unsigned char	swap_bits(unsigned char octet)
 int main(void)
 {
 	unsigned char  octet = 9;
-	printf("|%hhu|\n", reverse_bits(octet));
+	printf("Reverse BITS: %hhu, %hhu\n", octet, reverse_bits(octet));
 	unsigned char bits = (unsigned char)NULL;
 	print_bits(bits);
 	unsigned char bats = -128;
@@ -98,7 +98,7 @@ int main(void)
 	unsigned char bots = 127;
 	print_bits(bots);
 	unsigned char swap = 'B';
-	printf("%hhu", swap_bits(swap));
+	printf("Swap BITS: %hhu, %hhu\n", swap, swap_bits(swap));
 
 	/* ********************************************************* */
 	/* Desmostración de como desborda y se convierte en negativo */
