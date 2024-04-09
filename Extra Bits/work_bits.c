@@ -122,5 +122,6 @@ int main(void)
 	
 	printf("Amarillo y tres puertas es: %d\n", YELLOW | TRES);
 	printf("Tres: %d\n", TRES);
+	print_bits(TRES);
 	return (0);
 }
