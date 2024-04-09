@@ -22,7 +22,7 @@
 
 #define	NONE	0x000	//0
 
-#define	RED		0x001	//1
+#define	RED	0x001	//1
 #define BLUE	0x002	//2
 #define	GREEN	0x004	//4
 #define	YELLOW	0x008	//8   8 + 64 = 72
