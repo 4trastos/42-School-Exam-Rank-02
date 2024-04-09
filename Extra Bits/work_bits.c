@@ -54,10 +54,10 @@ int main(void)
 	printf("%hhu\n", reverse_bits(octet));
 	unsigned char bits = (unsigned char)NULL;
 	print_bits(bits);
-	unsigned char bits = -128;
-	print_bits(bits);
-	unsigned char bits = 127;
-	print_bits(bits);
+	unsigned char bats = -128;
+	print_bits(bats);
+	unsigned char bots = 127;
+	print_bits(bots);
 	unsigned char swap = 'B';
 	printf("%hhu", swap_bits(swap));
 	
