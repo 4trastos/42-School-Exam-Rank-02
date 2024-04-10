@@ -92,8 +92,16 @@ unsigned char	swap_bits(unsigned char octet)
 }
 
 	/* ********************************************************* */
-	/*            Realizar la operación de SWAP BITS             */
-	/*            Realizar la operación de SWAP BITS             */
+	/*            Se desplaza 4 posiciones a la derecha          */
+	/*            01000001 >> 4 = 00000100                       */
+	/*            Se desplaza 4 posiciones a la izquierda        */
+	/*            01000001 << 4 = 00010000                       */
+	/*            SE USA OR  (|)                                 */
+	/*            00000100                                       */
+ 	/*	      00010000                                       */
+  	/*        =   			                             */
+   	/*            00010100    				     */
+	/*                				             */
 	/* ********************************************************* */
 
 int main(void)
