@@ -91,11 +91,14 @@ int main(void)
 {
 	unsigned char  octet = 9;
 	printf("Reverse BITS: %hhu, %hhu\n", octet, reverse_bits(octet));
-	unsigned char bits = (unsigned char)NULL;
+//	unsigned char bits = (unsigned char)NULL;
+	unsigned char bits = 36;
 	print_bits(bits);
+	write(1, "-128 en binario es: ", 20);
 	unsigned char bats = -128;
 	print_bits(bats);
-	unsigned char bots = 127;
+	write(1, " 128 en binario es: ", 21);
+	unsigned char bots = 128;
 	print_bits(bots);
 	unsigned char swap = 'B';
 	printf("Swap BITS: %hhu, %hhu\n", swap, swap_bits(swap));
