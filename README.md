@@ -95,35 +95,35 @@ No hay Norminette en este examen.
 <br>
 
 # Exam Login Details
-:uno: Inicie sesión con lo siguiente:
+1: Inicie sesión con lo siguiente:
 ```
 login -> exam
 password -> exam
 ```
-:dos: In ITerm:
+2: In ITerm:
 ```
 Type examshell in terminal
 ```
-:tres: Your 42 Intra Account:
+3: Your 42 Intra Account:
 ```
 login -> your 42 intra username (eg. prossi)
 pasword -> your password
 ```
-:cuatro: Your 42 Intra Photo:
+4: Your 42 Intra Photo:
 ```
 Allow photo check
 ```
-:cinco: Access Rendu:
+5: Access Rendu:
 ```
 Type 'y' or 'yes'
 ```
-:seis: En el Shell de examen, solo tiene los siguientes 3 comandos:
+6: En el Shell de examen, solo tiene los siguientes 3 comandos:
 ```
 - status - check the time and other things
 - grademe - checking pushed exercise (moulinet)
 - finish - closing examshell and finish exam
 ```
-:siete: Abra un nuevo iTerm o VSCode:
+7: Abra un nuevo iTerm o VSCode:
 ```
 - You can find your exam subject in the directory subject
 - Then you can see directory Rendu. It is your repository.
@@ -133,15 +133,15 @@ Type 'y' or 'yes'
 
 Cuando esté listo para enviar su función/programa, vaya a Rendu y presione la carpeta que creó haciendo lo siguiente:
 
-:one: git add <folder name/files in folder>
+1: git add <folder name/files in folder>
 
-:two: git status
+2: git status
 
-:three: git commit -m "any commit message you like in these strings"
+3: git commit -m "any commit message you like in these strings"
 
-:four: git push
+4: git push
 
-:five: After you git push, type `grademe` in the examshell for your project to be evaluated. 
+5: After you git push, type `grademe` in the examshell for your project to be evaluated. 
 
 <br>
 
