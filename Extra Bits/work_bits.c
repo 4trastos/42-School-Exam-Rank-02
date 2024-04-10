@@ -120,8 +120,11 @@ int main(void)
 	/*    ...:::  Operación coche amarillo y 3 puertas  :::...   */
 	/* ********************************************************* */
 	
-	printf("Amarillo y tres puertas es: %d\n", YELLOW | TRES);
-	printf("Tres: %d\n", TRES);
+	printf("YELLOW (8) y TRES (64) puertas es: %d\n", YELLOW | TRES);
+	printf("TRES: %d\n", TRES);
 	print_bits(TRES);
+	printf("YELLOW: %d\n", YELLOW);
+	print_bits(YELLOW);
+	print_bits(YELLOW | TRES);
 	return (0);
 }
