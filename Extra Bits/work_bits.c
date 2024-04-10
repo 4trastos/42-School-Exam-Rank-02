@@ -82,6 +82,10 @@ unsigned char	reverse_bits(unsigned char octet)
 	return (bit);
 }
 
+	/* ********************************************************* */
+	/*            Realizar la operación de SWAP BITS             */
+	/* ********************************************************* */
+
 unsigned char	swap_bits(unsigned char octet)
 {
 	return ((octet >> 4) | (octet << 4));
@@ -120,7 +124,7 @@ int main(void)
 	printf("\n");
 
 	/* ********************************************************* */
-	/*         Desmostración de como NULL en ASCII es 0          */
+	/*         Demostración de como NULL en ASCII es 0          */
 	/* ********************************************************* */
 
 	int i;
