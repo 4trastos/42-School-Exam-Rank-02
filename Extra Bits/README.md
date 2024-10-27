@@ -1,4 +1,4 @@
-## Subject
+## Subject 🇬🇧
 
 ```
 Assignment name  : work_bits
@@ -128,3 +128,133 @@ After displacement.     | 0 | 0 | 0 | 0 | 0 | 0 |  X <--- is discarded.
 
 As can be seen, the result of the shift is 00000000 in binary, whose equivalent value in
 decimal is 0. This value is then assigned to the right variable.
+```
+
+## Subject 🇪🇸
+
+```
+Nombre de la tarea: work_bits
+Archivos esperados: work_bits.c
+Funciones permitidas: write, printf, &, |, << >>,
+--------------------------------------------------------------------------------
+
+Operadores de bits:
+
+*** Esto tiene como objetivo ser una ayuda para aprender a operar con bits. ***
+
+*** Aquí puede operar y demostrar las funciones que se le piden en el
+Examen 02 sobre operaciones con bits. ***
+
+Los operadores de bits solo pueden operar en tipos de datos char e int (enteros decimales, hexadecimales y octales).
+Los operadores de bits realizan operaciones en cada uno de los bits de un entero o char.
+
+Estos operadores son:
+
+• AND, representado por el símbolo (&).
+• OR, representado por el símbolo (|).
+• XOR, representado por el símbolo (^).
+• Complemento a uno, representado por el símbolo ~.
+• Desplazamiento a la izquierda, se representa con dos signos menores
+que (").
+• Desplazamiento a la derecha, se representa con dos signos mayores
+que (").
+
+La operación AND (and) compara bit a bit obteniendo un resultado según la tabla AND.
+
+Operación AND bit a bit:
+
+AND | Bit 0 | Bit 1 | Resultado
+--------------------------------------
+0 | 0 | 0
+0 | 1 | 0
+1 | 0 | 0
+1 | 1 | 1
+
+Así, si realizamos la operación 107 (01101011 en binario) AND 27 (00011011 en binario)
+obtendríamos 11 (00001011 en binario).
+La ​​operación OR (|) compara bit a bit, obteniendo un resultado según la tabla OR.
+
+Operación OR bit a bit:
+
+OR | Bit 0 | Bit 1 | Resultado
+--------------------------------------
+0 | 0 | 0
+0 | 1 | 1
+1 | 0 | 1
+1 | 1 | 1
+
+Así, si realizamos la operación 107 (01101011 en binario) OR 27 (00011011 en binario)
+obtendríamos 123 (01111011 en binario).
+La ​​operación XOR (^) compara bit a bit obteniendo un resultado según la tabla XOR.
+
+Operación XOR bit a bit:
+
+XOR | Bit 0 | Bit 1 | Resultado
+--------------------------------------
+0 | 0 | 0
+0 | 1 | 1
+1 | 0 | 1
+1 | 1 | 0
+
+Así, si realizamos la operación 107 (01101011 en binario) XOR 27 (00011011 en binario)
+obtendríamos 112 (01110000 en binario).
+El operador complemento a uno (~) simplemente invierte cada uno de los bits.
+Por lo tanto, ~01101011 es igual a 10010100 y ~00011011 es igual a 11100100.
+El operador de desplazamiento a la izquierda («) desplaza los bits a la izquierda tantas posiciones como se indique
+después del operador, colocando el bit menos significativo (bit más a la derecha) con un cero, y
+
+el bit más significativo (bit más a la izquierda) se descarta.
+
+Veamos un ejemplo en el que se aplica un desplazamiento a la derecha a una variable.
+a la izquierda de un bit:
+
+int main (void)
+{
+int left = 1;
+left = left << 1;
+}
+
+En la inicialización, la variable izquierda tiene un valor de 1, que en binario es 00000001.
+Pero, ¿qué sucede en la operación de desplazamiento a la izquierda? Podemos verlo en la siguiente figura:
+
+___ ___ ___ ___ ___ ___
+| 0 | 0 | 0 | 0 | 0 | 1 | Antes de mover.
+¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯
+Se descarta el bit más / / / / /
+significativo ___ ___ ___ ___ ___ ___
+---> X | 0 | 0 | 0 | 0 | 1 | 0 | Después del desplazamiento.
+¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯
+^
+Se introduce un cero
+en el bit menos
+significativo
+
+Como se puede ver, el resultado del desplazamiento es 00000010 en binario, cuyo valor equivalente en
+decimal es 2. Este valor se asigna entonces a la variable de la izquierda.
+El operador de desplazamiento a la derecha (») desplaza los bits hacia la derecha tantas posiciones como se indique
+después del operador, con el bit más significativo establecido en cero y el bit menos significativo descartado. Veamos ahora un ejemplo de desplazamiento de un bit hacia la derecha:
+
+int main (void)
+{
+int right = 1;
+right = right >> 1;
+}
+
+En la inicialización, la variable derecha tiene un valor de 1, que en binario es 00000001. Veamos
+la siguiente figura para ver cómo se realiza el movimiento.
+
+___ ___ ___ ___ ___ ___
+Antes de mover. | 0 | 0 | 0 | 0 | 0 | 1 |
+¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯
+\ \ \ \ \ \ El bit más
+___ ___ ___ ___ ___ ___ significativo
+Después del desplazamiento, se descarta | 0 | 0 | 0 | 0 | 0 | 0 | X <---.
+¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯
+^
+Se introduce un cero
+en el bit menos
+significativo
+
+Como se puede ver, el resultado del desplazamiento es 00000000 en binario, cuyo valor equivalente en
+decimal es 0. Este valor se asigna entonces a la variable derecha.
+```
