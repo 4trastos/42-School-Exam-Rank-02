@@ -210,8 +210,8 @@ a la izquierda de un bit:
 
 int main (void)
 {
-int left = 1;
-left = left << 1;
+    int left = 1;
+    left = left << 1;
 }
 
 En la inicialización, la variable izquierda tiene un valor de 1, que en binario es 00000001.
@@ -236,9 +236,10 @@ después del operador, con el bit más significativo establecido en cero y el bi
 
 int main (void)
 {
-int right = 1;
-right = right >> 1;
+    int right = 1;
+    right = right >> 1;
 }
+
 
 En la inicialización, la variable derecha tiene un valor de 1, que en binario es 00000001. Veamos
 la siguiente figura para ver cómo se realiza el movimiento.
