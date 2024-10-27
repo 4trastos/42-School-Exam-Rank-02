@@ -163,12 +163,12 @@ La operación AND (and) compara bit a bit obteniendo un resultado según la tabl
 
 Operación AND bit a bit:
 
-AND | Bit 0 | Bit 1 | Resultado
+AND |   Bit 0   |   Bit 1   |   Result
 --------------------------------------
-0 | 0 | 0
-0 | 1 | 0
-1 | 0 | 0
-1 | 1 | 1
+          0     |     0     |     0
+          0     |     1     |     0
+          1     |     0     |     0
+          1     |     1     |     1
 
 Así, si realizamos la operación 107 (01101011 en binario) AND 27 (00011011 en binario)
 obtendríamos 11 (00001011 en binario).
@@ -176,12 +176,12 @@ La ​​operación OR (|) compara bit a bit, obteniendo un resultado según la 
 
 Operación OR bit a bit:
 
-OR | Bit 0 | Bit 1 | Resultado
+OR  |   Bit 0   |   Bit 1   |   Result
 --------------------------------------
-0 | 0 | 0
-0 | 1 | 1
-1 | 0 | 1
-1 | 1 | 1
+          0     |     0     |     0
+          0     |     1     |     1
+          1     |     0     |     1
+          1     |     1     |     1
 
 Así, si realizamos la operación 107 (01101011 en binario) OR 27 (00011011 en binario)
 obtendríamos 123 (01111011 en binario).
@@ -189,12 +189,12 @@ La ​​operación XOR (^) compara bit a bit obteniendo un resultado según la 
 
 Operación XOR bit a bit:
 
-XOR | Bit 0 | Bit 1 | Resultado
+XOR |   Bit 0   |   Bit 1   |   Result
 --------------------------------------
-0 | 0 | 0
-0 | 1 | 1
-1 | 0 | 1
-1 | 1 | 0
+          0     |     0     |     0
+          0     |     1     |     1
+          1     |     0     |     1
+          1     |     1     |     0
 
 Así, si realizamos la operación 107 (01101011 en binario) XOR 27 (00011011 en binario)
 obtendríamos 112 (01110000 en binario).
@@ -217,17 +217,17 @@ left = left << 1;
 En la inicialización, la variable izquierda tiene un valor de 1, que en binario es 00000001.
 Pero, ¿qué sucede en la operación de desplazamiento a la izquierda? Podemos verlo en la siguiente figura:
 
-___ ___ ___ ___ ___ ___
-| 0 | 0 | 0 | 0 | 0 | 1 | Antes de mover.
-¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯
-Se descarta el bit más / / / / /
-significativo ___ ___ ___ ___ ___ ___
----> X | 0 | 0 | 0 | 0 | 1 | 0 | Después del desplazamiento.
-¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯
-^
-Se introduce un cero
-en el bit menos
-significativo
+                         ___ ___ ___ ___ ___ ___
+                        | 0 | 0 | 0 | 0 | 0 | 1 |  Before moving.                         
+                         ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯
+The most                /   /   /   /   /   /
+significant bit          ___ ___ ___ ___ ___ ___
+is discarded   --->  X  | 0 | 0 | 0 | 0 | 1 | 0 |  After displacement.
+                         ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯
+                                              ^
+                                      A zero is entered
+                                         in the least
+                                       significant bit
 
 Como se puede ver, el resultado del desplazamiento es 00000010 en binario, cuyo valor equivalente en
 decimal es 2. Este valor se asigna entonces a la variable de la izquierda.
@@ -243,17 +243,17 @@ right = right >> 1;
 En la inicialización, la variable derecha tiene un valor de 1, que en binario es 00000001. Veamos
 la siguiente figura para ver cómo se realiza el movimiento.
 
-___ ___ ___ ___ ___ ___
-Antes de mover. | 0 | 0 | 0 | 0 | 0 | 1 |
-¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯
-\ \ \ \ \ \ El bit más
-___ ___ ___ ___ ___ ___ significativo
-Después del desplazamiento, se descarta | 0 | 0 | 0 | 0 | 0 | 0 | X <---.
-¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯
-^
-Se introduce un cero
-en el bit menos
-significativo
+                         ___ ___ ___ ___ ___ ___
+Before moving.          | 0 | 0 | 0 | 0 | 0 | 1 |                         
+                         ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯
+                            \   \   \   \   \   \         The most
+                         ___ ___ ___ ___ ___ ___          significant bit
+After displacement.     | 0 | 0 | 0 | 0 | 0 | 0 |  X <--- is discarded.          
+                         ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯ ¯¯¯         
+                          ^
+                   A zero is entered
+                      in the least
+                    significant bit
 
 Como se puede ver, el resultado del desplazamiento es 00000000 en binario, cuyo valor equivalente en
 decimal es 0. Este valor se asigna entonces a la variable derecha.
